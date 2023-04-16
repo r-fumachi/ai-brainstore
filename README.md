@@ -27,6 +27,10 @@ git clone https://github.com/mckaywrigley/ai-brainstore.git
 **2. Install Dependencies**
 
 ```bash
+choco install nvm
+nvm use 17 #It uses v17.9.1 (64-bit) v18.15.0 has issues installing the hnswlib-node package
+npm install --global --production windows-build-tools #https://github.com/nodejs/node-gyp/issues/849
+npm update
 npm i
 ```
 
@@ -39,7 +43,7 @@ OPENAI_API_KEY=YOUR_KEY_HERE # required
 DEFAULT_MODEL=gpt-3.5-turbo # or gpt-4
 COLLECTION_NAME=ai-brainstore # name for your brainsstore
 REVIEW_MEMORIES=true # false to disable
-SERPAPI_API_KEY=YOUR_KEY_HERE # optional (works way better if used!)
+SERPAPI_API_KEY=YOUR_KEY_HERE # optional (https://serpapi.com/manage-api-key)
 ```
 
 **4. Install & Run Chroma**
