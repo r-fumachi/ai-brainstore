@@ -75,6 +75,9 @@ export const answerFromSearch = async (brain: Collection, input: string) => {
     const result = await executor.call({ input: inputPlus });
     return result.output;
   } catch (e) {
+    console.log("Error", e.stack);
+    console.log("Error", e.name);
+    console.log("Error", e.message);
     console.log(chalk.red("\nI made a mistake. Trying again..."));
     return answerFromSearch(brain, input);
   }
